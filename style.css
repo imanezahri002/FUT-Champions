@@ -21,20 +21,22 @@ nav{
 }
 
 .contenu-un{
-    margin-top: 20px;
-    margin-left: 5px;
+     margin-top: 20px;
     display: grid;
     width: 100%;
     height: 100vh;
-    grid-template-columns:50rem 45rem ;
-    grid-template-rows: 9fr 1fr;
-    gap: 30px;
-    
+    grid-template-columns:55rem 40rem ;
+    justify-content: center;
+
 }
 .terrain{
     background-image: url("./imgs/stadium_background.webp");
     background-repeat: no-repeat;
     background-size: cover;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    height: 120vh;
+    border: 1px solid red;
 }
 
 .formulaire{
@@ -73,11 +75,40 @@ nav{
 #btn1:hover{
     cursor: pointer;
 }
-.terrain .Gk {
-    filter:drop-shadow(15px 25px 15px rgba(222, 26, 26, 0.87));
-}
 .terrain .joeur1{
-    width: 100px;
+    width: 7rem;
+    height: 9rem;
+}
+.terrain .joeur1:hover{
+    filter:drop-shadow(7px 5px 3px rgba(207, 239, 24, 0.87));
+    -webkit-filter:drop-shadow(7px 5px 3px rgba(207, 239, 24, 0.87));
+}
+.Gk{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+.Cb{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items:center;
+}
+.Cm{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items:center;
+}
+.Lw-Rw{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    justify-items:center;
+}
+.ST{
+    display: grid;
+    justify-items: center;
 }
 input,select{
     width: 300px;
@@ -85,6 +116,9 @@ input,select{
     border-radius: 10px;
     border: none;
 
+}
+.reserve{
+    height: 60rem;
 }
 footer{
     color: white;
