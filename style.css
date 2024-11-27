@@ -36,7 +36,6 @@ nav{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     height: 120vh;
-    border: 1px solid red;
 }
 
 .formulaire{
@@ -50,8 +49,13 @@ nav{
     display: flex;
     justify-content: center;
     margin-bottom:30px;
+    margin-top: 20px;
+}
+.contentforms{
+    margin-top: 60px;
 }
 .tous{
+    margin-bottom: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
@@ -115,10 +119,30 @@ input,select{
     height:50px;
     border-radius: 10px;
     border: none;
-
+    padding: 10px;
+    outline-color:rgb(70, 108, 70);
+    font-size: 1.2rem;
 }
 .reserve{
-    height: 60rem;
+    width: 100%;
+    height: 22rem;
+    margin-top: 9rem;
+    
+}
+.reserve h2{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.reserve .j-reserve{
+    font-size: 2rem;
+}
+.joueur-reserve{
+    display: flex;
+    justify-content: center;
+}
+.joueur-reserve .joeur-res{
+    width: 12rem;
+    height: 15rem;
 }
 footer{
     color: white;
