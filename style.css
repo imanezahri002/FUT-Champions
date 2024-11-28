@@ -79,14 +79,60 @@ nav{
 #btn1:hover{
     cursor: pointer;
 }
+.terrain .parent-joeur{
+    width: 6rem;
+    height: 9rem;
+    position: relative;
+}
 .terrain .joeur1{
-    width: 4rem;
+    width: 6rem;
     height: 9rem;
 }
-.terrain .joeur1:hover{
+.terrain .parent-joeur:hover{
     filter:drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.879));
     transform: scale(1.2);
     -webkit-filter:drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.879));
+}
+.profile_joeur{
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    left: 17px;
+    top: 28px;
+}
+.nom_joeur{
+    color:aliceblue;
+    position: absolute;
+    top: 92px;
+    left: 25px;
+}
+.position_joeur{
+    position: absolute;
+    color: aliceblue;
+    top: 27px;
+    left: 12px;
+}
+.drapeau{
+    position: absolute;
+    width: 13px;
+    height: 38px;
+    top: 32px;
+    right: 11px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.statistique{
+    display: flex;
+    justify-content: space-around;
+    width: 70px;
+    height: 15px;
+    flex-direction: row;
+    position: absolute;
+    font-size:5px;
+    color: white;
+    bottom: 20px;
+    left: 13px;
 }
 .Gk{
     width: 100%;

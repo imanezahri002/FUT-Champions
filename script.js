@@ -2,7 +2,8 @@
 const nom=document.getElementById("name");
 const nationalite=document.getElementById("nationality");
 const club=document.getElementById("club");
-const position=document.getElementById("position");
+let position=document.getElementById("position");
+
 
 position.addEventListener("change", (event) => {
     if(position.value == "GK"){
@@ -25,51 +26,55 @@ position.addEventListener("change", (event) => {
         }
     }
 });
-let joueurs = [];
+
 function ajouter(){
-    const position=document.getElementById("position");
-    let inputs=document.getElementsByTagName("input");//return html collection
-    inputs = Array.from(inputs).filter((item)=> !item.hasAttribute("hidden"));
-    if(position.value !=="GK"){
-    let joueur ={
-        name : inputs[0].value,
-        nationality :inputs[1].value,
-        club :inputs[2].value,
-        profile :inputs[3].value,
-        flag :inputs[4].value ,
-        logo :inputs[5].value,
-        position :position.value,
-        rating : inputs[6].value,
-        pace :inputs[7].value ,
-        shooting : inputs[8].value,
-        passing : inputs[9].value,
-        driblling : inputs[10].value,
-        defending : inputs[11].value,
-        physical : inputs[12].value,
-    };
-       joueurs.push(joueur);
+    let select = document.getElementById(`${position.value}`);
+    console.log(select);
+    let joueur_profile = select.querySelectorAll('img');
     
-}else{
-    let joueur={
-        "name":inputs[0].value,
-        "nationality":inputs[1].value,
-        "club":inputs[2].value,
-        "profile":inputs[3].value,
-        "flag":inputs[4].value ,
-        "logo":inputs[5].value,
-        "position":position.value,
-        "rating": inputs[6].value,
-        "diving":inputs[7].value ,
-        "handling": inputs[8].value,
-        "kicking": inputs[9].value,
-        "reflexes": inputs[10].value,
-        "speed": inputs[11].value,
-        "positioning": inputs[12].value,
+    let input_profile=document.getElementById("profile");
+    joueur_profile[0].setAttribute("src",input_profile.value);
+    
+    let input_drapeau=document.getElementById("flag");
+    joueur_profile[2].setAttribute("src",input_drapeau.value);
+
+    let input_club=document.getElementById("logo_club");
+    joueur_profile[3].setAttribute("src",input_club.value);
+
+    let input_name=document.getElementById("name");
+    let name=select.querySelector(".nomJ");
+    name.textContent=`${input_name.value}`;
+
+    if(position.value == "GK"){
+        let inputs=document.getElementsByTagName("input");//return html collection
+        inputs = Array.from(inputs).filter((item)=> !item.hasAttribute("hidden"));
+        console.log(inputs);
+   
+        let statistic=select.querySelectorAll("p");
+        statistic[1].textContent=`${inputs[7].value}`
+        statistic[3].textContent=`${inputs[8].value}`;
+        statistic[5].textContent=`${inputs[9].value}`;
+        statistic[7].textContent=`${inputs[10].value}`;
+        statistic[9].textContent=`${inputs[11].value}`;
+        statistic[11].textContent=`${inputs[12].value}`;
+            
     }
-        joueurs.push(joueur);
+    else{
+        let inputs=document.getElementsByTagName("input");//return html collection
+        inputs = Array.from(inputs).filter((item)=> !item.hasAttribute("hidden"));
+        console.log(inputs);
+   
+        let statistic=select.querySelectorAll("p");
+        statistic[1].textContent=`${inputs[7].value}`
+        statistic[3].textContent=`${inputs[8].value}`;
+        statistic[5].textContent=`${inputs[9].value}`;
+        statistic[7].textContent=`${inputs[10].value}`;
+        statistic[9].textContent=`${inputs[11].value}`;
+        statistic[11].textContent=`${inputs[12].value}`;
+            
+    }
     
 }
 
-}
 
 
