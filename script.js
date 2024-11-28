@@ -13,7 +13,7 @@ position.addEventListener("change", (event) => {
         }
         const physical=document.querySelectorAll(".goal-joueur");
         for(let i=0;i<physical.length;i++){
-        physical[i].removeAttribute("hidden"); // remove class hidden
+        physical[i].removeAttribute("hidden");// remove class hidden
         }
     }else{
         const positioning=document.querySelectorAll(".normal-joueur")//nodeliste ==array
@@ -26,8 +26,9 @@ position.addEventListener("change", (event) => {
         }
     }
 });
-
+    
 function ajouter(){
+    
     let select = document.getElementById(`${position.value}`);
     console.log(select);
     let joueur_profile = select.querySelectorAll('img');
@@ -73,7 +74,7 @@ function ajouter(){
         statistic[11].textContent=`${inputs[12].value}`;
             
     }
-    
+
 }
 
 
