@@ -49,11 +49,14 @@
             <div class="contentforms">
 
                 <div class="tous">
-                    <input type="text" required placeholder="nom">
-                    <input type="text" required placeholder="nationalité">
-                    <input type="text" required placeholder="club">
-
+                    <input type="text" required placeholder="nom" id="name">
+                    <input type="text" required placeholder="nationalité" id="nationality">
+                    <input type="text" required placeholder="club" id="club">
+                    <input type="url" required placeholder="profile:http://" id="profile">
+                    <input type="url" required placeholder="flag:http://" id="flag">
+                    <input type="url" required placeholder="logo:http://" id="logo_club">
                     <select name="position" id="position">
+                        <option value="position">position</option>
                         <option value="ST">ST</option>
                         <option value="RW">RW</option>
                         <option value="LW">LW</option>
@@ -64,27 +67,40 @@
                         <option value="GK">GK</option>
                     </select>
 
-                    <input type="number" placeholder="rating">
+                    <input type="number" placeholder="rating" id="rating">
 
-                    <input type="number" placeholder="pace">
+                    <input type="number" placeholder="pace" id="pace"  class="normal-joueur">
 
-                    <input type="number" placeholder="shooting">
+                    <input type="number" placeholder="shooting" id="shooting" class="normal-joueur">
 
-                    <input type="number" placeholder="passing">
+                    <input type="number" placeholder="passing" id="passing" class="normal-joueur">
 
-                    <input type="number" placeholder="driblling">
+                    <input type="number" placeholder="driblling" id="driblling" class="normal-joueur">
 
-                    <input type="number" placeholder="defending">
+                    <input type="number" placeholder="defending" id="defending" class="normal-joueur">
 
-                    <input type="number" placeholder="physical">
+                    <input type="number" placeholder="physical" id="physical" class="normal-joueur">
+                    <!-- statistique du goal -->
+                    
+                    <input type="number" placeholder="diving" id="diving"  class="goal-joueur" hidden required>
 
+                    <input type="number" placeholder="handling" id="handling" class="goal-joueur" hidden required>
+
+                    <input type="number" placeholder="kicking" id="kicking" class="goal-joueur" hidden required>
+
+                    <input type="number" placeholder="reflexes" id="reflexes" class="goal-joueur" hidden required>
+
+                    <input type="number" placeholder="speed" id="speed" class="goal-joueur" hidden required>
+
+                    <input type="number" placeholder="positioning" id="positioning" class="goal-joueur" hidden required>
+                   
                     <select name="" id="liste1">
                         <option value="4-3-3">4-3-3</option>
                         <option value="4-4-2">4-4-2</option>
                     </select>
                 </div>
 
-                <div class="ajout-btn"><button id="btn1">AJOUTER</button></div>
+                <div class="ajout-btn"><button id="btn1" onclick="ajouter()">AJOUTER</button></div>
             </div>
 
 

@@ -80,12 +80,13 @@ nav{
     cursor: pointer;
 }
 .terrain .joeur1{
-    width: 7rem;
+    width: 4rem;
     height: 9rem;
 }
 .terrain .joeur1:hover{
-    filter:drop-shadow(7px 5px 3px rgba(207, 239, 24, 0.87));
-    -webkit-filter:drop-shadow(7px 5px 3px rgba(207, 239, 24, 0.87));
+    filter:drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.879));
+    transform: scale(1.2);
+    -webkit-filter:drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.879));
 }
 .Gk{
     width: 100%;
@@ -114,6 +115,9 @@ nav{
     display: grid;
     justify-items: center;
 }
+/* #diving,#handling,#kicking,#reflexes,#speed,#positioning{
+    display: none;
+} */
 input,select{
     width: 300px;
     height:50px;
