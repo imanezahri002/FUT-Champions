@@ -80,6 +80,9 @@ function ajouter(){
     statistic[9].textContent=`${inputs[11].value}`;
     statistic[11].textContent=`${inputs[12].value}`;
     cpt++;
+    if(cpt>11){
+        let 
+    }
     }
       
 }
