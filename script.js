@@ -28,9 +28,35 @@ position.addEventListener("change", (event) => {
 });
     
 function ajouter(){
-    
+    let cpt=0;
+    let inputs=document.getElementsByTagName("input");//return html collection
+    inputs = Array.from(inputs).filter((item)=> !item.hasAttribute("hidden"));
+    console.log(inputs);
+    let regex=/^[a-zA-Z]+$/;
+    let trouveErreur = false;
+    for(let i=0;i<inputs.length;i++){
+        console.log(inputs[i].value);
+        if(inputs[i].value == "" ){
+            alert("il faut remplir toutes les champs");
+            trouveErreur = true;
+            break;
+        }
+        else if(inputs[i].getAttribute("type")=="number" && (inputs[i].value<0 || inputs[i].value>100)){
+            alert("il faut remplir toutes les champs");
+            trouveErreur = true;
+            break;
+        }
+        else if(!regex.test((inputs[0].value))){
+            alert("il faut saisir le nom ou prenom pas les deux");
+            trouveErreur = true;
+            break;
+        }
+    }
+
+    if(trouveErreur == false){
     let select = document.getElementById(`${position.value}`);
     console.log(select);
+    
     let joueur_profile = select.querySelectorAll('img');
     
     let input_profile=document.getElementById("profile");
@@ -45,36 +71,17 @@ function ajouter(){
     let input_name=document.getElementById("name");
     let name=select.querySelector(".nomJ");
     name.textContent=`${input_name.value}`;
-
-    if(position.value == "GK"){
-        let inputs=document.getElementsByTagName("input");//return html collection
-        inputs = Array.from(inputs).filter((item)=> !item.hasAttribute("hidden"));
-        console.log(inputs);
-   
-        let statistic=select.querySelectorAll("p");
-        statistic[1].textContent=`${inputs[7].value}`
-        statistic[3].textContent=`${inputs[8].value}`;
-        statistic[5].textContent=`${inputs[9].value}`;
-        statistic[7].textContent=`${inputs[10].value}`;
-        statistic[9].textContent=`${inputs[11].value}`;
-        statistic[11].textContent=`${inputs[12].value}`;
-            
+    
+    let statistic=select.querySelectorAll("p");
+    statistic[1].textContent=`${inputs[7].value}`
+    statistic[3].textContent=`${inputs[8].value}`;
+    statistic[5].textContent=`${inputs[9].value}`;
+    statistic[7].textContent=`${inputs[10].value}`;
+    statistic[9].textContent=`${inputs[11].value}`;
+    statistic[11].textContent=`${inputs[12].value}`;
+    cpt++;
     }
-    else{
-        let inputs=document.getElementsByTagName("input");//return html collection
-        inputs = Array.from(inputs).filter((item)=> !item.hasAttribute("hidden"));
-        console.log(inputs);
-   
-        let statistic=select.querySelectorAll("p");
-        statistic[1].textContent=`${inputs[7].value}`
-        statistic[3].textContent=`${inputs[8].value}`;
-        statistic[5].textContent=`${inputs[9].value}`;
-        statistic[7].textContent=`${inputs[10].value}`;
-        statistic[9].textContent=`${inputs[11].value}`;
-        statistic[11].textContent=`${inputs[12].value}`;
-            
-    }
-
+      
 }
 
 
