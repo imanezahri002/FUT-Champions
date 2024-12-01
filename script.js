@@ -26,7 +26,11 @@ position.addEventListener("change", (event) => {
         }
     }
 });
-
+        let input_name = document.getElementById("name");
+        
+        let input_club = document.getElementById("logo_club");
+        let input_drapeau = document.getElementById("flag");
+        let input_profile = document.getElementById("profile");
 function ajouter() {
 
 
@@ -54,12 +58,9 @@ function ajouter() {
     }
 
     if (!trouveErreur){
+        
         let select = document.getElementById(`${position.value}`);
-        let input_name = document.getElementById("name");
         let h5Element = select.querySelector('h5');
-        let input_club = document.getElementById("logo_club");
-        let input_drapeau = document.getElementById("flag");
-        let input_profile = document.getElementById("profile");
         if (h5Element.textContent.trim() !== "") {
             let parent_res=document.getElementsByClassName("joueur-reserve")[0];
             
@@ -79,6 +80,7 @@ function ajouter() {
 
             let posR=document.createElement("h3");
             posR.setAttribute("class","pos_jr");
+            posR.textContent=position.value;
             card_reserve.appendChild(posR);
 
             let card=document.createElement("img");
@@ -219,10 +221,8 @@ function ajouter() {
             
             joueur_profile[0].setAttribute("src", input_profile.value);
 
-            
             joueur_profile[2].setAttribute("src", input_drapeau.value);
 
-            
             joueur_profile[3].setAttribute("src", input_club.value);
 
             
@@ -245,5 +245,73 @@ function ajouter() {
 
     }
 
+}
+function modifier(e){
+    let parentElement=e.currentTarget.parentElement;
+    console.log(parentElement);
+    
+    let nameMod=parentElement.getElementsByTagName("h6")[0].textContent;
+    input_name.value=nameMod;
+
+    let flagMod=parentElement.getElementsByTagName("img")[2];
+    let sourceDr=flagMod.getAttribute("src");
+    input_drapeau.value=sourceDr;
+
+    let profilMod=parentElement.getElementsByTagName("img")[0];
+    let sourcePr=profilMod.getAttribute("src");
+    input_profile.value=sourcePr;
+
+    let logoMod=parentElement.getElementsByTagName("img")[3];
+    let sourceLg=logoMod.getAttribute("src");
+    input_club.value=sourceLg;
+
+    let posMod=parentElement.getElementsByTagName("h5")[0].textContent;
+    
+    position.value=posMod;
+    let statMod=parentElement.querySelectorAll("p");
+    let inputs = document.getElementsByTagName("input");//return html collection
+    inputs = Array.from(inputs).filter((item) => !item.hasAttribute("hidden"));
+    console.log(inputs);
+    inputs[6].value="";
+    inputs[7].value=statMod[1].textContent;
+    inputs[8].value=statMod[3].textContent;
+    inputs[9].value=statMod[5].textContent;
+    inputs[10].value=statMod[7].textContent;
+    inputs[11].value=statMod[9].textContent;
+    inputs[12].value=statMod[11].textContent;
+
+    let butMod=document.getElementById("btn1");
+    butMod.textContent="MODIFIER";
+    butMod.setAttribute("onclick",`update(${posMod})`);
+}
+function update(posMod){
+            let inputs = document.getElementsByTagName("input");//return html collection
+            inputs = Array.from(inputs).filter((item) => !item.hasAttribute("hidden"));
+    
+            let joueur_profile = posMod.querySelectorAll('img');
+            joueur_profile[0].setAttribute("src", input_profile.value);
+
+            joueur_profile[2].setAttribute("src", input_drapeau.value);
+
+            joueur_profile[3].setAttribute("src", input_club.value);
+
+            
+            let name = posMod.querySelector(".nomJ");
+            name.textContent = input_name.value;
+
+            let value_position = posMod.getElementsByTagName("h5")[0];
+            value_position.textContent = position.value;
+
+            let statistic = posMod.querySelectorAll("p");
+            statistic[1].textContent = `${inputs[7].value}`
+            statistic[3].textContent = `${inputs[8].value}`;
+            statistic[5].textContent = `${inputs[9].value}`;
+            statistic[7].textContent = `${inputs[10].value}`;
+            statistic[9].textContent = `${inputs[11].value}`;
+            statistic[11].textContent = `${inputs[12].value}`;
+
+            let butMod=document.getElementById("btn1");
+            butMod.textContent="AJOUTER";
+            butMod.setAttribute("onclick",`AJOUTER()`);
 }
 

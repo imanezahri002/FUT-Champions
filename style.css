@@ -82,7 +82,7 @@ nav{
     cursor: pointer;
 }
 .parent-joeur{
-    width: 6rem;
+    width: 6.7rem;
     height: 9rem;
     position: relative;
 }
@@ -91,9 +91,9 @@ nav{
     height: 9rem;
 }
 .terrain .parent-joeur:hover{
-    filter:drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.879));
+    filter:drop-shadow(0px 0px 10px #00ffcce0);
     transform: scale(1.2);
-    -webkit-filter:drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.879));
+    -webkit-filter:drop-shadow(0px 0px 10px #00ffcce0);
 }
 .profile_joeur{
     width: 65px;
@@ -160,9 +160,12 @@ nav{
     justify-items:center;
 }
 .ST{
+    width: 100%;
     display: grid;
     justify-items: center;
 }
+
+
 /* #diving,#handling,#kicking,#reflexes,#speed,#positioning{
     display: none;
 } */
