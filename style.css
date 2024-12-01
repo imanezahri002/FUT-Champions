@@ -6,6 +6,7 @@
 }
 body{
     background-color: rgba(52, 50, 50, 0.87);
+    
 }
 nav{
     width: 100%;
@@ -21,12 +22,13 @@ nav{
 }
 
 .contenu-un{
-     margin-top: 20px;
+    margin-top:20px;
     display: grid;
-    width: 100%;
-    height: 100vh;
-    grid-template-columns:55rem 40rem ;
-    justify-content: center;
+    width: 98%;
+    height: auto;
+    grid-template-columns:1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 .terrain{
@@ -35,7 +37,7 @@ nav{
     background-size: cover;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    height: 120vh;
+    
 }
 
 .formulaire{
@@ -104,7 +106,7 @@ nav{
     color:aliceblue;
     position: absolute;
     top: 92px;
-    left: 25px;
+    left: 35px;
 }
 .position_joeur{
     position: absolute;
@@ -165,7 +167,7 @@ nav{
     display: none;
 } */
 input,select{
-    width: 300px;
+    width: 260px;
     height:50px;
     border-radius: 10px;
     border: none;
@@ -175,13 +177,13 @@ input,select{
 }
 .reserve{
     width: 100%;
-    height: 22rem;
-    margin-top: 9rem;
-    
+    height: auto;
 } 
 .joueur-reserve{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     
 }
 .joueur-reserve .joeur-res ,.cad-reserve{
@@ -205,7 +207,7 @@ input,select{
     color: white;
     position: absolute;
     top: 9.3rem;
-    left: 3.5rem;
+    left: 3.4rem;
 }
 .pos_jr{
     color: white;
@@ -235,22 +237,12 @@ input,select{
     bottom: 50px;
     left: 22px;
 }
-/* }
-.reserve h2{
-    margin-left: 30px;
-    margin-top: 10px;
-}
 .reserve .j-reserve{
     font-size: 2rem;
-}
-.joueur-reserve{
-    display: flex;
-    justify-content: center;
+    margin-left: 50px;
+    margin-top: 30px;
 }
 
-.joueur-reserve .joeur-res:hover{
-    transform: scale(1.2);
-} */
 
 footer{
     color: white;
@@ -260,6 +252,35 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
     background-color: rgb(27, 24, 24);
+}
+@media screen and (max-width: 1024px) {
+    
+    .contenu-un {
+        grid-template-columns: 1fr;
+
+    }
+    .formulaire{
+        margin-top: 30px;
+    }
+    input,select{
+        width: 340px;
+    }
+    .titre h2{
+        font-size:3rem;
+    }
+}
+@media screen and (max-width: 430px) {
+    .contenu-un {
+        grid-template-columns: 1fr;
+    
+    }
+    .logo{
+        width: 250px;
+    }
+    body{
+        width: 200vw;
+    }
+    
+
 }
