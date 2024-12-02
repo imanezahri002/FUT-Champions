@@ -245,8 +245,30 @@ input,select{
     margin-left: 50px;
     margin-top: 30px;
 }
-
-
+.icone1{
+    color: #00ffcce0;
+    position: absolute;
+    right: 0px;
+    top: 25px;
+}
+.icone2{
+    color: #f57171;
+    position: absolute;
+    right: 0px;
+    top: 3rem;
+}
+#iconeRes1{
+    color: #00ffcce0;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+}
+#iconeRes2{
+    color: #f57171;
+    position: absolute;
+    right: 0px;
+    top: 4.7rem;
+}
 footer{
     color: white;
     bottom: 0;

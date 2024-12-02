@@ -68,17 +68,19 @@ function ajouter() {
             card_reserve.setAttribute("class","cad-reserve");
             parent_res.appendChild(card_reserve);
 
+           
+
             let imageD=document.createElement("img");
             imageD.setAttribute("src",input_profile.value);
             imageD.setAttribute("class","profile-res");
             card_reserve.appendChild(imageD);
 
-            let nameR=document.createElement("h4");
+            let nameR=document.createElement("h6");
             nameR.setAttribute("class","name-res");
             nameR.textContent=input_name.value;
             card_reserve.appendChild(nameR);
 
-            let posR=document.createElement("h3");
+            let posR=document.createElement("h5");
             posR.setAttribute("class","pos_jr");
             posR.textContent=position.value;
             card_reserve.appendChild(posR);
@@ -213,6 +215,17 @@ function ajouter() {
                 physi.appendChild(phyCon);
                   
              }
+             let icone_un=document.createElement("i");
+             icone_un.setAttribute("class","fa-solid fa-pen-to-square fa-lg");
+             icone_un.setAttribute("onclick","modifier(event)");
+             icone_un.setAttribute("id","iconeRes1");
+             card_reserve.appendChild(icone_un);
+ 
+             let icone_deux=document.createElement("i");
+             icone_deux.setAttribute("class","fa-solid fa-trash fa-lg");
+             icone_deux.setAttribute("id","iconeRes2");
+             icone_deux.setAttribute("onclick","supprimer(event)");
+             card_reserve.appendChild(icone_deux);
          } else {
 
             
@@ -247,6 +260,7 @@ function ajouter() {
 
 }
 function modifier(e){
+    console.log("dkhlna");
     let parentElement=e.currentTarget.parentElement;
     console.log(parentElement);
     
@@ -266,7 +280,7 @@ function modifier(e){
     input_club.value=sourceLg;
 
     let posMod=parentElement.getElementsByTagName("h5")[0].textContent;
-    
+    console.log(posMod);
     position.value=posMod;
     let statMod=parentElement.querySelectorAll("p");
     let inputs = document.getElementsByTagName("input");//return html collection
@@ -285,6 +299,7 @@ function modifier(e){
     butMod.setAttribute("onclick",`update(${posMod})`);
 }
 function update(posMod){
+    
             let inputs = document.getElementsByTagName("input");//return html collection
             inputs = Array.from(inputs).filter((item) => !item.hasAttribute("hidden"));
     
@@ -315,3 +330,30 @@ function update(posMod){
             butMod.setAttribute("onclick",`AJOUTER()`);
 }
 
+function supprimer(e){
+    let parentElement=e.currentTarget.parentElement;
+    let difference=parentElement.getAttribute("class");
+    if(difference=="cad-reserve"){
+        parentElement.remove();
+    }else{
+        let nameMod=parentElement.getElementsByTagName("h6")[0];
+        nameMod.textContent="";
+        let posMod=parentElement.getElementsByTagName("h5")[0];
+        posMod.textContent="";
+        let logoMod=parentElement.getElementsByTagName("img")[3];
+        logoMod.setAttribute("src","./imgs/vide.png");
+        let profilMod=parentElement.getElementsByTagName("img")[0];
+        profilMod.setAttribute("src","./imgs/Untitled.png");
+        let flagMod=parentElement.getElementsByTagName("img")[2];
+        flagMod.setAttribute("src","./imgs/vide.png");
+
+        let statistic = parentElement.querySelectorAll("p");
+            statistic[1].textContent = "";
+            statistic[3].textContent = "";
+            statistic[5].textContent = "";
+            statistic[7].textContent = "";
+            statistic[9].textContent = "";
+            statistic[11].textContent="";
+
+    }
+}
