@@ -65,6 +65,7 @@ function ajouter() {
             let parent_res=document.getElementsByClassName("joueur-reserve")[0];
             
             let card_reserve=document.createElement("div");
+            card_reserve.setAttribute("id","resCard");
             card_reserve.setAttribute("class","cad-reserve");
             parent_res.appendChild(card_reserve);
 
@@ -76,7 +77,7 @@ function ajouter() {
             card_reserve.appendChild(imageD);
 
             let nameR=document.createElement("h6");
-            nameR.setAttribute("class","name-res");
+            nameR.setAttribute("class","name-res nomJ");
             nameR.textContent=input_name.value;
             card_reserve.appendChild(nameR);
 
@@ -263,7 +264,8 @@ function modifier(e){
     console.log("dkhlna");
     let parentElement=e.currentTarget.parentElement;
     console.log(parentElement);
-    
+    let def=parentElement.getAttribute("id");
+    console.log(def);
     let nameMod=parentElement.getElementsByTagName("h6")[0].textContent;
     input_name.value=nameMod;
 
@@ -293,13 +295,18 @@ function modifier(e){
     inputs[10].value=statMod[7].textContent;
     inputs[11].value=statMod[9].textContent;
     inputs[12].value=statMod[11].textContent;
-
     let butMod=document.getElementById("btn1");
     butMod.textContent="MODIFIER";
-    butMod.setAttribute("onclick",`update(${posMod})`);
+    
+    if(def == "resCard"){
+        butMod.setAttribute("onclick",`update(${def})`);
+         
+    }else{
+        butMod.setAttribute("onclick",`update(${posMod})`);
+    }
 }
 function update(posMod){
-    
+            console.log(posMod);
             let inputs = document.getElementsByTagName("input");//return html collection
             inputs = Array.from(inputs).filter((item) => !item.hasAttribute("hidden"));
     
