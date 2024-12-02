@@ -4,19 +4,19 @@ const nationalite = document.getElementById("nationality");
 const club = document.getElementById("club");
 let position = document.getElementById("position");
 
-
+//commentaire
 position.addEventListener("change", (event) => {
     if (position.value == "GK") {
         const positioning = document.querySelectorAll(".normal-joueur");
         for (let i = 0; i < positioning.length; i++) {
-            positioning[i].setAttribute("hidden", "hidden"); // hidden { display: "none" }
+            positioning[i].setAttribute("hidden", "hidden"); 
         }
         const physical = document.querySelectorAll(".goal-joueur");
         for (let i = 0; i < physical.length; i++) {
-            physical[i].removeAttribute("hidden");// remove  hidden
+            physical[i].removeAttribute("hidden");
         }
     } else {
-        const positioning = document.querySelectorAll(".normal-joueur")//nodeliste ==array
+        const positioning = document.querySelectorAll(".normal-joueur");
         for (let i = 0; i < positioning.length; i++) {
             positioning[i].removeAttribute("hidden");
         }
@@ -244,7 +244,7 @@ function ajouter() {
             name.textContent = input_name.value;
 
             let value_position = select.getElementsByTagName("h5")[0];
-            value_position.textContent = position.value;
+            value_position.textContent =position.value;
 
             let statistic = select.querySelectorAll("p");
             statistic[1].textContent = `${inputs[7].value}`
@@ -255,13 +255,10 @@ function ajouter() {
             statistic[11].textContent = `${inputs[12].value}`;
         }
 
-
-
     }
-
 }
 function modifier(e){
-    console.log("dkhlna");
+    
     let parentElement=e.currentTarget.parentElement;
     console.log(parentElement);
     let def=parentElement.getAttribute("id");
